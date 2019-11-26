@@ -13,7 +13,7 @@ class Connector extends BasicConnector {
     async start() {
         await super.start({
             serverRoutes: {
-                'config.getConfig': {
+                getConfig: {
                     handler: this._config.getConfig,
                     scope: this._config,
                     validation: {
