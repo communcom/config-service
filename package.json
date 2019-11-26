@@ -18,6 +18,7 @@
     "commun"
   ],
   "dependencies": {
-    "cyberway-core-service": "^3.54.3"
+    "cyberway-core-service": "^3.54.3",
+    "lodash": "^4.17.15"
   }
 }
