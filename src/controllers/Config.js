@@ -11,8 +11,8 @@ const minimalVersions = {
 };
 
 class Config extends Basic {
-    async getConfig({ platform, deviceType, type, isWebView, version }) {
-        const minVersion = get(minimalVersions, [type, platform]);
+    async getConfig({ platform, deviceType, clientType, version }) {
+        const minVersion = get(minimalVersions, [clientType, platform]);
 
         if (minVersion && isLowerThan(version, minVersion)) {
             throw {
