@@ -17,7 +17,7 @@ class Connector extends BasicConnector {
                     handler: this._config.getConfig,
                     scope: this._config,
                     validation: {
-                        required: ['platform', 'deviceType', 'clientType', 'version', 'deviceId'],
+                        required: ['platform', 'deviceType', 'clientType', 'version'],
                         properties: {
                             platform: {
                                 type: 'string',
