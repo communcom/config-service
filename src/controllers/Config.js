@@ -2,6 +2,7 @@ const { get } = require('lodash');
 const core = require('cyberway-core-service');
 const { Basic } = core.controllers;
 const { isLowerThan } = require('../utils/versions');
+const { getGlobalSettings } = require('../utils/settings');
 
 const minimalVersions = {
     app: {
@@ -21,12 +22,17 @@ class Config extends Basic {
             };
         }
 
+        const globalSettings = await getGlobalSettings();
+
         return {
             features: {
                 ftueCommunityBunus: true,
             },
             domain: 'https://commun.com',
             ftueCommunityBonus: 10,
+            isMaintenance: false,
+            // params above can be overriden by globalSettings
+            ...globalSettings,
         };
     }
 }

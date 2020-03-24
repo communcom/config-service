@@ -8,6 +8,8 @@ class Main extends BasicMain {
     constructor() {
         super(env);
 
+        this.startMongoBeforeBoot();
+
         const config = new Config();
         const connector = new Connector({ config });
 

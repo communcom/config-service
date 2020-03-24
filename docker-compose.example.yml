@@ -6,6 +6,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    depends_on:
+      config-mongo:
+        condition: service_healthy
     networks:
       - services-tier
     ports:
@@ -14,5 +17,24 @@ services:
     env_file:
       - .env
 
+  config-mongo:
+    container_name: config-mongo
+    image: mongo
+    restart: always
+    healthcheck:
+      test: mongo --eval 'db.getCollectionNames()'
+      interval: 10s
+      timeout: 2s
+      retries: 10
+    volumes:
+      - config_mongodb_vol:/data/db
+    ports:
+      - 127.0.0.1:27017:27017
+    networks:
+      - services-tier
+
 networks:
   services-tier:
+
+volumes:
+  config_mongodb_vol:
