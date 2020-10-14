@@ -2,7 +2,7 @@
   "name": "config-service",
   "version": "1.0.1",
   "author": "Commun.com",
-  "license": "ISC",
+  "license": "MIT",
   "description": "",
   "main": "src/index.js",
   "scripts": {
