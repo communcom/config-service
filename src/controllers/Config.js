@@ -12,7 +12,7 @@ const minimalVersions = {
 };
 
 class Config extends Basic {
-    async getConfig({ platform, deviceType, clientType, version }) {
+    async getConfig({}, {}, { platform, version, clientType, deviceType }) {
         const minVersion = get(minimalVersions, [clientType, platform]);
 
         if (minVersion && isLowerThan(version, minVersion)) {
