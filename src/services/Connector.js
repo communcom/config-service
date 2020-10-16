@@ -16,29 +16,6 @@ class Connector extends BasicConnector {
                 getConfig: {
                     handler: this._config.getConfig,
                     scope: this._config,
-                    validation: {
-                        required: ['platform', 'deviceType', 'clientType', 'version'],
-                        properties: {
-                            platform: {
-                                type: 'string',
-                                enum: ['ios', 'android', 'desktop'],
-                            },
-                            deviceType: {
-                                type: 'string',
-                                enum: ['phone', 'tablet', 'desktop'],
-                            },
-                            clientType: {
-                                type: 'string',
-                                enum: ['app', 'web', 'web-view'],
-                            },
-                            version: {
-                                type: 'string',
-                            },
-                            deviceId: {
-                                type: 'string',
-                            },
-                        },
-                    },
                 },
             },
         });

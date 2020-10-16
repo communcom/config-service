@@ -1,8 +1,8 @@
 {
   "name": "config-service",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Commun.com",
-  "license": "ISC",
+  "license": "MIT",
   "description": "",
   "main": "src/index.js",
   "scripts": {
@@ -18,7 +18,7 @@
     "commun"
   ],
   "dependencies": {
-    "cyberway-core-service": "^3.54.3",
+    "cyberway-core-service": "^3.55.6",
     "lodash": "^4.17.15"
   }
 }
